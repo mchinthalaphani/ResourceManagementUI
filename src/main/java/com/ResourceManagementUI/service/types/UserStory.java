@@ -3,11 +3,6 @@ package com.ResourceManagementUI.service.types;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.*;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-
 public class UserStory implements Serializable {
 
 	/**
@@ -22,31 +17,33 @@ public class UserStory implements Serializable {
 	private String estimatedTime;
 
 	private String actualTimeSpent;
+
 	private String remainingTime;
-	private String userStoryStatus;
+
 	private String userStoryOwner;
+
 	private Date userStoryTargetDate;
 
 	private String userStoryArtifact;
 
-	private String userStoryCategory;
 	private String userStoryNotes;
 
-	public String getUserStoryNotes() {
-		return userStoryNotes;
-	}
+	private UserStoryType userStoryType;
 
-	public void setUserStoryNotes(String userStoryNotes) {
-		this.userStoryNotes = userStoryNotes;
-	}
-	
-	public UserStory() {
-		super();
+	private Project projects;
 
-	}
+	private ProjectSprint projectSprints;
+
+	private UserStoryCategory userStoryCategories;
+
+	private UserStoryStatus userStoryStatus;
 
 	public Integer getUserStoryId() {
 		return userStoryId;
+	}
+
+	public void setUserStoryId(Integer userStoryId) {
+		this.userStoryId = userStoryId;
 	}
 
 	public String getUserStoryDescription() {
@@ -81,14 +78,6 @@ public class UserStory implements Serializable {
 		this.remainingTime = remainingTime;
 	}
 
-	public String getUserStoryStatus() {
-		return userStoryStatus;
-	}
-
-	public void setUserStoryStatus(String userStoryStatus) {
-		this.userStoryStatus = userStoryStatus;
-	}
-
 	public String getUserStoryOwner() {
 		return userStoryOwner;
 	}
@@ -105,8 +94,6 @@ public class UserStory implements Serializable {
 		this.userStoryTargetDate = userStoryTargetDate;
 	}
 
-	
-
 	public String getUserStoryArtifact() {
 		return userStoryArtifact;
 	}
@@ -115,12 +102,52 @@ public class UserStory implements Serializable {
 		this.userStoryArtifact = userStoryArtifact;
 	}
 
-	public String getUserStoryCategory() {
-		return userStoryCategory;
+	public String getUserStoryNotes() {
+		return userStoryNotes;
 	}
 
-	public void setUserStoryCategory(String userStoryCategory) {
-		this.userStoryCategory = userStoryCategory;
+	public void setUserStoryNotes(String userStoryNotes) {
+		this.userStoryNotes = userStoryNotes;
+	}
+
+	public UserStoryType getUserStoryType() {
+		return userStoryType;
+	}
+
+	public void setUserStoryType(UserStoryType userStoryType) {
+		this.userStoryType = userStoryType;
+	}
+
+	public Project getProjects() {
+		return projects;
+	}
+
+	public void setProjects(Project projects) {
+		this.projects = projects;
+	}
+
+	public ProjectSprint getProjectSprints() {
+		return projectSprints;
+	}
+
+	public void setProjectSprints(ProjectSprint projectSprints) {
+		this.projectSprints = projectSprints;
+	}
+
+	public UserStoryCategory getUserStoryCategories() {
+		return userStoryCategories;
+	}
+
+	public void setUserStoryCategories(UserStoryCategory userStoryCategories) {
+		this.userStoryCategories = userStoryCategories;
+	}
+
+	public UserStoryStatus getUserStoryStatus() {
+		return userStoryStatus;
+	}
+
+	public void setUserStoryStatus(UserStoryStatus userStoryStatus) {
+		this.userStoryStatus = userStoryStatus;
 	}
 
 }
